@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { useChat } from "ai/react";
 import { BsArrowUpSquareFill, BsClipboard } from "react-icons/bs";
 import { HiOutlineLightBulb, HiMoon, HiSun } from "react-icons/hi";
