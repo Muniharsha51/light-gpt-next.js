@@ -51,7 +51,7 @@ export default function Chat() {
                   ) : (
                     <div className="flex items-center">
                       <div className={`p-3 rounded-lg ${m.role === 'user' ? 'text-blue-600 font-bold' : 'bg-green-400 text-black'}`}>
-                        {m.role === 'user' ? 'You: ' : 'AI: '}
+                        {/* {m.role === 'user' ? 'You: ' : 'AI: '} */}
                         {m.content.startsWith('```') ? (
                           <pre className="overflow-x-auto bg-black bg-opacity-10 p-3 rounded-md"><code className="language-javascript">{m.content}</code></pre>
                         ) : (
