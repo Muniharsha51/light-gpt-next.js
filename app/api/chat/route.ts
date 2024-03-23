@@ -8,13 +8,22 @@ const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY || '');
 export const runtime = 'edge';
  
 
+// const buildGoogleGenAIPrompt = (messages: Message[]) => ({
+//   contents: messages
+//     .filter(message => message.role === 'user' || message.role === 'assistant')
+//     .map(message => ({
+//       role: message.role === 'user' ? 'user' : 'model',
+//       parts: [{ text: message.content }],
+//     })),
+// });
+
 const buildGoogleGenAIPrompt = (messages: Message[]) => ({
   contents: messages
     .filter(message => message.role === 'user' || message.role === 'assistant')
     .map(message => ({
       role: message.role === 'user' ? 'user' : 'model',
       parts: [{ text: message.content }],
-    })),
+    })) as Content[], // Add this type assertion to ensure the correct type
 });
  
 export async function POST(req: Request) {
