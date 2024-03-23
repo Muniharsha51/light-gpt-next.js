@@ -17,7 +17,6 @@ export default function Chat() {
   };
 
   const isEmpty = messages.length === 0;
-  console.log(messages)
   return (
     <>
       <nav
