@@ -116,7 +116,31 @@ export default function Chat() {
           </div>
         </div>
 
-        <div
+        <form onSubmit={(e: FormEvent<HTMLFormElement>) => handleSubmit(e)}> {/* Use onSubmit */}
+          <div
+            className="overflow-hidden relative border border-black shadow-[0 2px 6px rgba(0,0,0,.05)] flex items-center border 
+                        dark:text-black rounded-2xl bg-white fixed bt-0"
+            style={{
+              marginLeft: "2rem",
+              marginBottom: "3rem",
+              marginRight: "2rem",
+            }}
+          >
+            <textarea
+              placeholder="Say something..."
+              value={input}
+              onChange={handleInputChange}
+              className="flex-grow resize-none border-0 bg-transparent focus:outline-none focus-visible:ring-0 dark:bg-transparent 
+                    py-[10px] pr-10 md:py-3.5 md:pr-12 max-h-[25vh] max-h-52 placeholder-black p-3 md:p-4"
+              style={{ width: "95%" }}
+            ></textarea>
+
+            <button type="submit" disabled={!input}> {/* Add type="submit" */}
+              <BsArrowUpSquareFill size={40} className="pr-3" />
+            </button>
+          </div>
+        </form>
+        {/* <div
           className="overflow-hidden relative border border-black shadow-[0 2px 6px rgba(0,0,0,.05)] flex items-center border 
                         dark:text-black rounded-2xl bg-white fixed bt-0"
           style={{
@@ -134,10 +158,10 @@ export default function Chat() {
             style={{ width: "95%" }}
           ></textarea>
 
-          <button onClick={handleSubmit} disabled={!input} type="submit">
+          <button onSubmit={handleSubmit} disabled={!input} type="submit">
             <BsArrowUpSquareFill size={40} className="pr-3" />
           </button>
-        </div>
+        </div> */}
       </div>
     </>
   );
