@@ -17,7 +17,7 @@ export default function Chat() {
   };
 
   const isEmpty = messages.length === 0;
-
+  console.log(messages)
   return (
     <>
       <nav
@@ -80,9 +80,9 @@ export default function Chat() {
                   ) : (
                     <div className="flex items-center">
                       <div
-                        className={`p-3 rounded-lg ${
-                          m.role === "user"
-                            ? "text-blue-600 font-bold"
+                         className={`p-3 rounded-lg ${
+                          m.role === "assistant"
+                            ? "text-blue-600"
                             : "bg-green-400 text-black"
                         }`}
                       >
